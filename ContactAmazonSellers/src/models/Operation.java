@@ -2,5 +2,5 @@ package models;
 
 public enum Operation {
 	GetAmazonAccount, GetAmazonSellerID, SaveSendEmailResult, SaveAccountBlockTime,
-	GetSEOAsin,SaveAsinRanking;
+	GetSEOAsin,SaveAsinRanking, SaveAccountRegistered;
 }

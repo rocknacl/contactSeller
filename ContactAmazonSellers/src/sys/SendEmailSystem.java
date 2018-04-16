@@ -1,6 +1,7 @@
 package sys;
 
 import contact_seller.SendSellerEmail;
+import contact_seller_plan2.SendSellerEmailPlan2;
 import models.Amazon_Country;
 import models.ContactSellerTask;
 import models.ContactSellerTaskFactory;
@@ -48,7 +49,7 @@ public class SendEmailSystem {
 			try {
 				System.out.println("send email start");
 				ContactSellerTask task = ContactSellerTaskFactory.getTaskOfJerry(country);
-				SendSellerEmail sse = new SendSellerEmail(task);
+				SendSellerEmailPlan2 sse = new SendSellerEmailPlan2(task);
 				sse.run();
 			} catch (Exception e) {
 				e.printStackTrace();

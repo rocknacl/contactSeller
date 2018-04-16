@@ -3,6 +3,7 @@ package web_brokers;
 import java.util.HashMap;
 import java.util.Map;
 
+import contact_seller_plan2.RobotAccountForRegister;
 import helpers.HttpRequestGenerator;
 import models.Operation;
 import sys.SendEmailSystem;
@@ -45,7 +46,19 @@ public class SendEmailWebBroker {
 		params.put("AccountEmail", email);
 
 		String result = HttpRequestGenerator.net(url, params, "POST");
-		System.out.println("saveAccountBlockTime : "+result);
+		System.out.println("saveAccountBlockTime : " + result);
+		return result;
+	}
+
+	public static String saveAccountRegistered(RobotAccountForRegister account) throws Exception {
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("OP", Operation.SaveAccountRegistered.toString());
+		params.put("email", account.getEmail());
+		params.put("password", account.getPassword());
+		params.put("name", account.getName());
+		params.put("nation", account.getCountry().toString());
+		String result = HttpRequestGenerator.net(url, params, "POST");
+		System.out.println(result);
 		return result;
 	}
 
