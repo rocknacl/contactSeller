@@ -12,9 +12,10 @@ public class Register {
 	boolean success;
 	WebDriver driver;
 
-	public Register(Amazon_Country c, WebDriver d) {
+	public Register(Amazon_Country c, WebDriver d,RobotAccountForRegister ri) {
 		this.country = c;
 		this.driver = d;
+		this.ri = ri;
 	}
 
 	public void run() {
@@ -34,7 +35,7 @@ public class Register {
 		passwordReEnterInput.clear();
 		passwordReEnterInput.sendKeys(ri.getPassword());
 
-		driver.findElement(By.id("continue"));
+		driver.findElement(By.id("continue")).click();;
 		if (!driver.getCurrentUrl().contains("ap/register")) {
 			this.success = true;
 		}

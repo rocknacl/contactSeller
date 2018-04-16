@@ -6,8 +6,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import robot.GuerrillamailScraper;
 
 public class CreateRobotAccountForRegister {
-	static String password;
-	static String name;
+	static String password = "abcd1234";
+	static String name = "Frank";
 	private String email;
 
 	public RobotAccountForRegister create() {

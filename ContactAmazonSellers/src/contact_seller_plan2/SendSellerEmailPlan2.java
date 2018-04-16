@@ -2,7 +2,6 @@ package contact_seller_plan2;
 
 import java.io.FileOutputStream;
 
-
 import java.io.PrintStream;
 import java.util.concurrent.TimeUnit;
 
@@ -43,14 +42,18 @@ public class SendSellerEmailPlan2 {
 			try {
 				driver = WebDriverFactory.getChromeDriver();
 				driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-				
+
 				CreateRobotAccountForRegister cra = new CreateRobotAccountForRegister();
-				RobotAccountForRegister account = cra.create();
-				if(account!=null) {
+				RobotAccountForRegister account = cra.create(driver);
+				if (account != null) {
 					account.setCountry(task.getCountry());
+				}
+				Register r = new Register(task.getCountry(), driver,account);
+				r.run();
+				if (r.success) {
 					SendEmailWebBroker.saveAccountRegistered(account);
 				}
-				RobotAccount ra = new RobotAccount(account.getEmail(),account.getPassword());
+				RobotAccount ra = new RobotAccount(account.getEmail(), account.getPassword());
 				c = new ContactSeller2(host, ra, driver, task);
 				c.run();
 			} catch (Exception e) {
@@ -62,11 +65,11 @@ public class SendSellerEmailPlan2 {
 				}
 			} finally {
 				try {
-					if(driver !=null)
-					driver.quit();
+					if (driver != null)
+						driver.quit();
 				} catch (Exception e) {
 					try {
-						Thread.sleep(1000*60*30);
+						Thread.sleep(1000 * 60 * 30);
 					} catch (InterruptedException e1) {
 						e1.printStackTrace();
 					}

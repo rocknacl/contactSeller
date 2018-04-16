@@ -10,7 +10,7 @@ public class SendEmailSystem {
 	// public static String host = "104.203.181.98";
 	public static String host = "47.89.185.130";
 	// public static String host = "localhost";
-	public static Amazon_Country country = Amazon_Country.US;
+	public static Amazon_Country country = Amazon_Country.DE;
 	public static int i = 0;
 	public static boolean captchaUnsolved = false;
 	public static boolean useProfiledChromeDriver = false;
