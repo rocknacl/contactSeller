@@ -1,0 +1,15 @@
+aehgv6644123@sohu.com yyXlV93203
+captcha!
+captcha!
+captcha!
+{"Result":"vwwycd","Id":"4c5e3a30-761a-4b3e-80d4-ce0f3c285b0c"}
+{"Error":"请正确设置typeid类型.","Error_Code":"10407","Request":""}
+captcha!
+{"Result":"q4cpfp","Id":"fcf91298-9c92-49ab-8514-993a359a666b"}
+{"Error":"快豆不足,请充值.","Error_Code":"10301","Request":""}
+captcha!
+{"Error":"快豆不足,请充值.","Error_Code":"10301","Request":""}
+captcha!
+{"Error":"快豆不足,请充值.","Error_Code":"10301","Request":""}
+saveAccountBlockTime : success
+take a rest for 10 mins
